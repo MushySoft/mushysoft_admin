@@ -5,8 +5,8 @@ description = "A lightweight and flexible admin panel for FastAPI"
 authors = ["Your Name <your.email@example.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/your_username/mushysoft_admin"
-homepage = "https://github.com/your_username/mushysoft_admin"
+repository = "https://github.com/mushysoft/mushysoft_admin"
+homepage = "https://github.com/mushysoft/mushysoft_admin"
 keywords = ["FastAPI", "Admin Panel", "SQLAlchemy", "Authentication"]
 classifiers = [
     "Programming Language :: Python :: 3",
