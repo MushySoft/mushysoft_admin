@@ -16,7 +16,7 @@
 To install the package from GitHub, use:
 
 ```bash
-pip install git+https://github.com/your_username/mushysoft_admin.git
+pip install git+https://github.com/mushysoft/mushysoft_admin.git
 ```
 
 ---
