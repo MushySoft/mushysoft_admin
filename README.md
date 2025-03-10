@@ -180,6 +180,3 @@ GitHub Repository: [🔗 https://github.com/your_username/mushysoft_admin](https
 ---
 
 🚀 **Now your FastAPI project has an easy-to-use admin panel!** 😎
-```
-
----
