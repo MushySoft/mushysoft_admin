@@ -1,4 +1,3 @@
-```md
 # 🛠️ `mushysoft_admin` - Lightweight Admin Panel for FastAPI
 
 `mushysoft_admin` is a lightweight, plug-and-play admin panel for FastAPI applications. It provides automatic CRUD endpoints, authentication, and user management without requiring additional configuration.
@@ -20,16 +19,10 @@ To install the package from GitHub, use:
 pip install git+https://github.com/your_username/mushysoft_admin.git
 ```
 
-Or, if published on PyPI:
-
-```bash
-pip install mushysoft_admin
-```
-
 ---
 
 ## 📌 **How to Use**
-### **1️⃣ Add `User` Model in Your Project**
+### **1️⃣ Add `SuperUser` Model in Your Project**
 You need to have a user model in your project with the required fields.
 
 ```python
@@ -39,8 +32,8 @@ from sqlalchemy import String, Boolean, DateTime, func, Integer
 class Base(DeclarativeBase):
     pass
 
-class User(Base):
-    __tablename__ = "users"
+class SuperUser(Base):
+    __tablename__ = "super_users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     username: Mapped[str] = mapped_column(String(150), unique=True, nullable=False)
