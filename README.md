@@ -173,9 +173,6 @@ settings = Settings()
 
 ---
 
-## 📜 **License**
-This project is licensed under the MIT License.
-
 📌 **Contributions & Issues**
 Feel free to open an issue or pull request!
 GitHub Repository: [🔗 https://github.com/your_username/mushysoft_admin](https://github.com/your_username/mushysoft_admin)
@@ -186,13 +183,3 @@ GitHub Repository: [🔗 https://github.com/your_username/mushysoft_admin](https
 ```
 
 ---
-
-### **📌 What’s Included in This `README.md`?**
-✅ **Installation instructions** (via GitHub or PyPI)
-✅ **Database model template**
-✅ **Full API reference** (authentication, CRUD for models & users)
-✅ **`.env` configuration**
-✅ **Why use this library?**
-✅ **Planned features**
-
-🔥 **Now your library has a professional-looking README for GitHub & PyPI! Need any edits or additions?** 😎
