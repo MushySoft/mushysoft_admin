@@ -2,7 +2,6 @@ from fastapi import FastAPI, APIRouter
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import DeclarativeBase
 from typing import Dict, Type, Optional
-from .config import settings
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import os
@@ -16,7 +15,7 @@ class CustomAdmin:
             cls._instance = super(CustomAdmin, cls).__new__(cls)
         return cls._instance
 
-    def __init__(self, app: FastAPI, connection: AsyncSession, user_model: Type[DeclarativeBase]):
+    def __init__(self, app: FastAPI, connection: AsyncSession, user_model: Type[DeclarativeBase], secret_key: str, token_expiration_minutes: float):
         if hasattr(self, "_initialized") and self._initialized:
             return
 
@@ -24,8 +23,8 @@ class CustomAdmin:
         self.__models: Dict[str, Type[DeclarativeBase]] = {}
         self.__connection = connection
         self.__user_model = user_model
-        self.__secret_key = settings.SECRET_KEY
-        self.__token_expiration_minutes = settings.TOKEN_EXPIRATION_MINUTES
+        self.__secret_key = secret_key
+        self.__token_expiration_minutes = token_expiration_minutes
         self._initialized = True
 
         app.include_router(self.__router)
@@ -67,7 +66,7 @@ class CustomAdmin:
 
 _admin_instance: Optional[CustomAdmin] = None
 
-def init_admin(app: FastAPI, connection: AsyncSession, user_model: Type[DeclarativeBase]) -> CustomAdmin:
+def init_admin(app: FastAPI, connection: AsyncSession, user_model: Type[DeclarativeBase], secret_key: str, token_expiration_minutes: float) -> CustomAdmin:
     """Функция для инициализации админки"""
     global _admin_instance
     if _admin_instance is None:
